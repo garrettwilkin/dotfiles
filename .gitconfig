@@ -31,3 +31,6 @@
     untracked = cyan
 [pull]
     rebase = true
+[user]
+	name = Garrett Wilkin
+	email = garrett.wilkin@gmail.com
