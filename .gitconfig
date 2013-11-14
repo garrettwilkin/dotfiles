@@ -34,3 +34,5 @@
 [user]
 	name = Garrett Wilkin
 	email = garrett.wilkin@gmail.com
+[push]
+	default = simple
