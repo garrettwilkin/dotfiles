@@ -1,0 +1,33 @@
+[alias]
+    df = diff --patience
+    dfc = !git df --cached
+    dw = diff --color-words --patience
+    dwc = !git dw --cached
+    lgr = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=relative --graph --all
+    lgs = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=short --graph --all
+    llr = log --pretty=format:'%C(bold blue)%H%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --decorate --numstat --date=relative
+    lls = log --pretty=format:'%C(bold blue)%H%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --decorate --numstat --date=short
+    lsf = ls-files
+    lsr = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=relative
+    lss = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=short
+[branch]
+    autosetuprebase = always
+[branch "master"]
+    rebase = true
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+    interactive = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    whitespace = red reverse
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[pull]
+    rebase = true

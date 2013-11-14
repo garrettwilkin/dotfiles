@@ -1,4 +1,4 @@
-export PATH="/usr/local/bin:"$PATH:":/usr/local/sbin:/Users/gw/.gem/ruby/1.8:/Users/gw/.gem/ruby/2.0.0:/usr/local/Cellar/ruby/2.0.0-p247/lib/ruby/gems/2.0.0/gems"
+export PATH="/usr/local/bin:"$PATH
 
 # add virtualenv support
 export WORKON_HOME=$HOME/.virtualenvs
@@ -20,14 +20,10 @@ done
 # }}}
 alias psql=/usr/local/pgsql-9.1/bin/psql
 
-# Initialize the 'hop' script
- source /System/Library/Frameworks/Python.framework/Versions/2.7/hop/hop.bash
-# Define an entry point for the lua script version of hop
-alias hop-lua-script="LUA_PATH=/System/Library/Frameworks/Python.framework/Versions/2.7/hop/json.lua /System/Library/Frameworks/Python.framework/Versions/2.7/hop/hop.lua"
-
 # Vagrant
+export VAGRANT_CWD="/Users/gw/Code/Parsely/chef-repo/vagrant"
 alias vadd="vagrant box add"
-alias vhalt="hagrant halt"
+alias vhalt="vagrant halt"
 alias vpro="vagrant provision"
 alias vssh="vagrant ssh"
 alias vup="vagrant up --no-provision"
@@ -98,3 +94,7 @@ function set_prompt() {
 }
 
 export PROMPT_COMMAND=set_prompt
+# Initialize the 'hop' script
+ source /usr/local/Cellar/python/2.7.5/Frameworks/Python.framework/Versions/2.7/hop/hop.bash
+# Define an entry point for the lua script version of hop
+alias hop-lua-script="LUA_PATH=/usr/local/Cellar/python/2.7.5/Frameworks/Python.framework/Versions/2.7/hop/json.lua /usr/local/Cellar/python/2.7.5/Frameworks/Python.framework/Versions/2.7/hop/hop.lua"
