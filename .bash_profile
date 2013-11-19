@@ -94,7 +94,3 @@ function set_prompt() {
 }
 
 export PROMPT_COMMAND=set_prompt
-# Initialize the 'hop' script
- source /usr/local/Cellar/python/2.7.5/Frameworks/Python.framework/Versions/2.7/hop/hop.bash
-# Define an entry point for the lua script version of hop
-alias hop-lua-script="LUA_PATH=/usr/local/Cellar/python/2.7.5/Frameworks/Python.framework/Versions/2.7/hop/json.lua /usr/local/Cellar/python/2.7.5/Frameworks/Python.framework/Versions/2.7/hop/hop.lua"
