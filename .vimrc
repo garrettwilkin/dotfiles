@@ -39,7 +39,7 @@ set background=dark " you can use 'dark' or 'light' as your background
 syntax on
 color mango
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set ruler
