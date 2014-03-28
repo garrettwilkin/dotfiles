@@ -8,7 +8,7 @@ export PATH="/usr/local/bin:"$PATH
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 source /usr/local/bin/virtualenvwrapper_lazy.sh
-
+export HOST=`hostname`
 
 # Everyone needs a little color in their lives
 RED='\[\033[31m\]'
@@ -31,7 +31,6 @@ man() {
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
 }
-
 
 # Hostname styles
 FULL='\H'
@@ -83,8 +82,13 @@ function set_prompt() {
     else
        venv=''
     fi
-
-    export PS1="» ${myuser}${path}${venv}${branch}\n${end}"
+   promptz="${host}:"
+   promptz+="${myuser}"
+   promptz+="${path}"
+   promptz+="${venv}"
+   promptz+="${branch}"
+   promptz+=" ${end}"
+   export PS1="${promptz}"
 }
 
 export PROMPT_COMMAND=set_prompt
