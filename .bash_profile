@@ -20,14 +20,6 @@ done
 # }}}
 alias psql=/usr/local/pgsql-9.1/bin/psql
 
-# Vagrant
-export VAGRANT_CWD="/Users/gw/Code/Parsely/chef-repo/vagrant"
-alias vadd="vagrant box add"
-alias vhalt="vagrant halt"
-alias vpro="vagrant provision"
-alias vssh="vagrant ssh"
-alias vup="vagrant up --no-provision"
-
 # Everyone needs a little color in their lives
 RED='\[\033[31m\]'
 GREEN='\[\033[32m\]'
@@ -62,6 +54,26 @@ SHORT='\h'
 UC=$GREEN
 LC=$WHITE
 HD=$FULL
+
+settitle() {
+  printf "\033k$1\033\\"
+}
+
+ssh() {
+    settitle "$*"
+    command ssh "$@"
+    settitle "bash"
+}
+
+# Vagrant
+#export VAGRANT_CWD="/Users/gw/Code/Parsely/chef-repo/vagrant"
+alias vadd="vagrant box add"
+alias vhalt="vagrant halt"
+alias vpro="vagrant provision"
+alias vssh="vagrant ssh"
+alias vup="vagrant up --no-provision"
+
+
 
 # Prompt function because PROMPT_COMMAND is awesome
 function set_prompt() {
@@ -105,3 +117,23 @@ function set_prompt() {
 }
 
 export PROMPT_COMMAND=set_prompt
+export PATH="/Users/gw/.rbenv/shims:${PATH}"
+source "/usr/local/Cellar/rbenv/0.4.0/libexec/../completions/rbenv.bash"
+rbenv rehash 2>/dev/null
+rbenv() {
+  typeset command
+  command="$1"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  rehash|shell)
+    eval `rbenv "sh-$command" "$@"`;;
+  *)
+    command rbenv "$command" "$@";;
+  esac
+}
+
+export CLICOLOR=1
+eval $(gdircolors -b $HOME/.dircolors)
