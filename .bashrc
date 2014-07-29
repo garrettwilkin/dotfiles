@@ -126,3 +126,6 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+export CLICOLOR=1
+eval $(dircolors -b $HOME/.dircolors)

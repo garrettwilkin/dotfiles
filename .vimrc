@@ -1,3 +1,6 @@
+syntax on
+set t_Co=256
+color mango
 set nocompatible   " be iMproved
 filetype off       " required!
 
@@ -36,6 +39,7 @@ filetype plugin indent on    " required!
 set t_Co=256
 set background=dark " you can use 'dark' or 'light' as your background
 syntax on
+color mango
 
 set tabstop=4
 set shiftwidth=4
