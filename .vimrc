@@ -1,43 +1,41 @@
 set nocompatible   " be iMproved
 filetype off       " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc() 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin() 
 " let Vungle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-" My Bundles here:
+" My Plugins here:
 "
 " original repos on github
-Bundle 'guileen/vim-node'
-Bundle 'goatslacker/mango.vim'
+Plugin 'guileen/vim-node'
 
 " vim-scripts repos
-Bundle 'L9'
+Plugin 'L9'
 
 " non github repos
-Bundle 'git://git.wincent/com/command-t.git'
+Plugin 'git://git.wincent/com/command-t.git'
 " ...
 
-"Bundle 'Floobits'
+"Plugin 'Floobits'
 
 filetype plugin indent on    " required!
 "
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) remove of unused bundles
+" :PluginList          - list configured bundles
+" :PluginInstall(!)    - install(update) bundles
+" :PluginSearch(!) foo - search(or refresh cache first) for foo
+" :PluginClean(!)      - confirm(or auto-approve) remove of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+" NOTE: comments after Plugin command are not allowed..
 
 " syntax highlighting
 set t_Co=256
 set background=dark " you can use 'dark' or 'light' as your background
 syntax on
-color mango
 
 set tabstop=4
 set shiftwidth=4
