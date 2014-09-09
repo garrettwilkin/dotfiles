@@ -50,17 +50,7 @@ function set_prompt() {
     # show the host only and be done with it.
     host="${UC}${HD}${NIL}"
 
-    # Special vim-tab-like shortpath (~/folder/directory/foo => ~/f/d/foo)
-    _pwd=`pwd | sed "s#$HOME#~#"`
-    if [[ $_pwd == "~" ]]; then
-       _dirname=$_pwd
-    else
-       _dirname=`dirname "$_pwd" `
-        if [[ $_dirname == "/" ]]; then
-              _dirname=""
-        fi
-       _dirname="$_dirname/`basename "$_pwd"`"
-    fi
+    _dirname='$(p="${PWD#${HOME}}"; [ "${PWD}" != "${p}" ] && printf "~";IFS=/; for q in ${p:1}; do printf /${q:0:1}; done; printf "${q:1}")'
     path="${LC}${_dirname}${NIL}"
     myuser="${UC}\u@${NIL}"
     myuser=""
@@ -73,7 +63,7 @@ function set_prompt() {
     fi
 
     # Dollar/pound sign
-    end="${LC}\$${NIL} "
+    end="${LC}\n\$${NIL} "
 
     # Virtual Env
     if [[ $VIRTUAL_ENV != "" ]]
