@@ -4,6 +4,9 @@ color mango
 set nocompatible   " be iMproved
 filetype off       " required!
 
+" Use Tim Pope's pathogen
+execute pathogen#infect()
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin() 
 " let Vungle manage Vundle
@@ -24,6 +27,7 @@ Plugin 'git://git.wincent/com/command-t.git'
 
 "Plugin 'Floobits'
 
+filetype plugin on    " PLEASE PLEASE PLEASE
 filetype plugin indent on    " required!
 "
 " Brief help
@@ -36,13 +40,12 @@ filetype plugin indent on    " required!
 " NOTE: comments after Plugin command are not allowed..
 
 " syntax highlighting
-set t_Co=256
-set background=dark " you can use 'dark' or 'light' as your background
+set t_Co=16
 syntax on
-color mango
 
 set tabstop=4
 set shiftwidth=4
-set expandtab
+
 set ruler
-set cursorline
+set background=dark
+colorscheme solarized
