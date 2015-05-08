@@ -119,3 +119,6 @@ fi
 
 export CLICOLOR=1
 eval $(dircolors -b $HOME/.dircolors)
+
+# wp cli tab completion.
+source ~/.bash/wp-completion.bash
