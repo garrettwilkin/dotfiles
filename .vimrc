@@ -8,7 +8,7 @@ filetype off       " required!
 execute pathogen#infect()
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin() 
+call vundle#begin()
 " let Vungle manage Vundle
 " required!
 Plugin 'gmarik/vundle'
@@ -24,6 +24,8 @@ Plugin 'L9'
 " non github repos
 Plugin 'git://git.wincent/com/command-t.git'
 " ...
+"
+Plugin 'shutnik/jshint2.vim'
 
 "Plugin 'Floobits'
 
@@ -49,3 +51,5 @@ set shiftwidth=4
 set ruler
 set background=dark
 colorscheme solarized
+
+autocmd BufWritePre * :%s/\s\+$//e
