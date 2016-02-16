@@ -1,6 +1,3 @@
-syntax on
-set t_Co=256
-color mango
 set nocompatible   " be iMproved
 filetype off       " required!
 
@@ -41,15 +38,13 @@ filetype plugin indent on    " required!
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Plugin command are not allowed..
 
-" syntax highlighting
-set t_Co=16
 syntax on
 
 set tabstop=4
 set shiftwidth=4
 
+set t_Co=256
 set ruler
 set background=dark
-colorscheme solarized
 
 autocmd BufWritePre * :%s/\s\+$//e
